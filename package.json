@@ -1,0 +1,38 @@
+{
+  "name": "taco.js",
+  "version": "0.0.1",
+  "author": "semu <code@semu.mp>",
+  "license": "MIT",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/semu/taco.js.git"
+  },
+  "keywords": [
+    "taco",
+    "taco.js",
+    "facebook",
+    "like",
+    "kudos",
+    "button",
+    "counter",
+    "analytics",
+    "metrics"
+  ],
+  "dependencies": {
+    "atob": "~1.1.0",
+    "btoa": "~1.1.0",
+    "moment": "~2.0.0",
+    "mongodb": "*",
+    "yuicompressor": "~2.4.8",
+    "sqwish": "~0.2.1"
+  },
+  "devDependencies": {
+    "express": "3.0.6",
+    "jade": "*",
+    "less-middleware": "*"
+  },
+  "engines": {
+    "node": ">=0.8.15"
+  }
+}

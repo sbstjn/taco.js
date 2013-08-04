@@ -1,0 +1,32 @@
+/** taco.js v0.0.1 StyleSheet **/ 
+
+@import(http://fonts.googleapis.com/css?family=Open+Sans);
+
+#taco {
+	width: 36px;
+	height: 36px;
+	cursor: pointer;
+	position: relative;
+}
+
+#taco span {
+	position: absolute;
+	z-index: 200;
+	top: 0;
+	left: 0;
+	display: block;
+	width: 36px;
+	height: 36px;
+	line-height: 36px;
+	text-align: center;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 13px;
+	color: rgba(255, 255, 255, 0.99);
+}
+
+#taco canvas {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 100;
+}

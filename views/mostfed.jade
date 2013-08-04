@@ -1,0 +1,65 @@
+extends layout
+
+block content
+	script(src="http://code.shutterstock.com/rickshaw/vendor/d3.v2.js")
+	script(src="http://code.shutterstock.com/rickshaw/rickshaw.min.js")
+	#welcome
+		p 
+			a(href="/mostfed") Most fed
+	#content
+		h2 Most Fed pages overall
+		- for (var n in mostFed)
+			.block
+				h3
+					a(href=mostFed[n].url) #{mostFed[n].url} 
+					span #{mostFed[n].total}
+				.date Last Taco 
+					span.timeago #{mostFed[n].lastFed}
+		h2 Last 5 pages fed
+		- for (var n in lastFed)
+			.block
+				h3
+					a(href=lastFed[n].url) #{lastFed[n].url} 
+					span.timeago #{lastFed[n].lastFed}
+		
+		h2 Tacos fed to this page in the last 20 minutes
+		#chart-last20minutes.block.chart
+		// code
+			pre!=last20minutes
+		script.
+			var data = [#{last20minutes}], result = [];
+			for (var n = 0, m = data.length; n < m; n++) { result.push({x: n, y:data[n]}); }
+			var graph = new Rickshaw.Graph( {
+				element: document.querySelector("#chart-last20minutes"),
+				width: 466, height: 85, renderer: 'bar',
+				series: [ { data: result, color: 'rgba(57,181,138,1)' } ] } );
+			graph.render();
+		h2 Tacos fed to this page in the last 24 hours
+		#chart-last24hours.block.chart
+		// code
+			pre!=last24hours
+		script.
+			var data = [#{last24hours}], result = [];
+			for (var n = 0, m = data.length; n < m; n++) { result.push({x: n, y:data[n]}); }
+			var graph = new Rickshaw.Graph( {
+				element: document.querySelector("#chart-last24hours"),
+				width: 466, height: 85, renderer: 'bar',
+				series: [ { data: result, color: 'rgba(57,181,138,1)' } ] } );
+			graph.render();
+		h2 Tacos fed to this page in the last 28 days
+		#chart-last28days.block.chart
+		// code
+			pre!=last28days
+		script.
+			var data = [#{last28days}], result = [];
+			for (var n = 0, m = data.length; n < m; n++) { result.push({x: n, y:data[n]}); }
+			var graph = new Rickshaw.Graph( {
+				element: document.querySelector("#chart-last28days"),
+				width: 466, height: 85, renderer: 'bar',
+				series: [ { data: result, color: 'rgba(57,181,138,1)' } ] } );
+			graph.render();
+		p.bla As <a href="#">Taco.js</a> exports raw numbers, all visualization is up to you. The above examples use <a href="http://code.shutterstock.com/rickshaw/">Rickshaw</a> for drawing graphs.
+		code
+			pre 0,3,8,2,1,4,20,0,6,9,7,14,9,2,0,1,0,1,3,1
+		#tacoContainer
+			#taco(data-value=taco.value) 

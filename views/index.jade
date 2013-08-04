@@ -1,0 +1,21 @@
+extends layout
+
+block content
+	#welcome
+		p Taco
+			span .js
+		// #taco
+	#content
+		h2 Install Taco.js with npm
+		code 
+			pre $ > npm install taco.js
+		h2 Bind Taco.js to Express.js
+		code
+			pre!=["var taco = require('taco.js')", "  , http = require('http')", "  , express = require('express');", "", "var app = express();", "app.configure(function() {", "  …", "  app.use(taco.express());", "  app.use(app.router);", "  …", "});", "", "taco.bind(app);", "http.createServer(app).listen(8080);"].join("\n")
+		h2 Use inside Jade templates
+		code
+			pre link(rel='stylesheet', href='/taco.css') <br />script(src'/taco.js')<br />…<br /><br />#taco
+		p.bla <a href="http://taco.semu.mp">Taco.js</a> is a prototype <a href="http://expressjs.com/">Express.js</a> middleware for rating articles, giving kudos or spreading love. Ditch your old Facebook like buttons and start feeding tacos to your pages…
+		p.bla Your data is yours to keep! <a href="http://taco.semu.mp">Taco.js</a> stores all information in your personal MongoDB. Query your logs, analyze saved metrics and generate your own reports based on the tacos fed to your pages. <a href="#">Taco.js</a> has some neat functions built in for getting metrics, see the <a href="/mostfed">Most Fed</a> pages site.
+		#tacoContainer
+			#taco

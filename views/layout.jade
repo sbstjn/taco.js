@@ -1,0 +1,44 @@
+doctype 5
+html
+  head
+    title TACO.js
+    script(src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js");
+    link(href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,600,800', rel='stylesheet', type='text/css')
+    link(link href='http://fonts.googleapis.com/css?family=Oxygen+Mono', rel='stylesheet', type='text/css')
+    link(rel='stylesheet', href='/taco.css')
+    script(src="/javascripts/moment.js");
+    script(src="/javascripts/website.js");
+    script(src="/taco.js");
+
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    block content
+    #footer
+      p 
+        a(href="http://taco.semu.mp") 
+          span TACO
+          | .js
+        |  | 
+        a(href="https://github.com/semu/taco.js/blob/master/RELEASES.md") Version 0.0.1
+        |  | 
+        a(href="/random") Random Page
+        |  | 
+        a(href="/mostfed") Most Fed
+      p lyrics  
+        a(href="https://twitter.com/sbstjn") @
+          span sbstjn
+        | , graffitis  	
+        a(href="https://twitter.com/svnldck") @
+          span svnldck
+    script(type="text/javascript")
+      var _gauges = _gauges || [];
+      (function() {
+        var t   = document.createElement('script');
+        t.type  = 'text/javascript';
+        t.async = true;
+        t.id    = 'gauges-tracker';
+        t.setAttribute('data-site-id', '51feaa1ef5a1f55c3400000b');
+        t.src = '//secure.gaug.es/track.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(t, s);
+      })();

@@ -1,0 +1,10 @@
+extends layout
+
+block content
+	#welcome
+		p 
+			a(href="/post/" + post + ".html") ##{post}
+	#content
+		p Quisque tristique arcu imperdiet, aliquet lectus vel, bibendum urna. Aenean risus enim, tempor ac tortor adipiscing, condimentum elementum metus.
+		#tacoContainer
+			#taco(data-url="/post/" + post + ".html", data-value=taco.total) 
